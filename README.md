@@ -1,7 +1,7 @@
-# AImix – AI-Generated Playlists
+# VibeSmith – AI-Generated Playlists
 
 ## 🎵 Krótki opis
-AImix to inteligentna aplikacja webowa, która tworzy spersonalizowane playlisty przy użyciu sztucznej inteligencji. Na podstawie nastroju, preferencji muzycznych i aktualnego kontekstu użytkownika (np. pora dnia, aktywność), AI proponuje idealne zestawienia utworów.
+VibeSmith to inteligentna aplikacja webowa, która tworzy spersonalizowane playlisty przy użyciu sztucznej inteligencji. Na podstawie nastroju, preferencji muzycznych i aktualnego kontekstu użytkownika (np. pora dnia, aktywność), AI proponuje idealne zestawienia utworów.
 
 ## 🎯 Cel projektu
 Celem projektu jest stworzenie aplikacji webowej, która:
@@ -11,10 +11,10 @@ Celem projektu jest stworzenie aplikacji webowej, która:
 - rozwija nasze umiejętności zespołowe, programistyczne i projektowe.
 
 ## 👥 Zespół
-- Jan K.  
-- Anna M.  
-- Piotr S.  
-- Maria T.
+- Piotr Kalinowski 
+- Norbert Linek
+- Karol Prętki
+- Dominik Olejniczak
 
 ## 🚀 Status
 Projekt w fazie inicjalnej – trwają prace nad strukturą i prototypowaniem.
