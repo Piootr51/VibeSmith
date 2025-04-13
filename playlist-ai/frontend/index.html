@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>VibeSmith – AI Playlist Generator</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+  <div class="container">
+    <h1>VibeSmith</h1>
+    <p>Create a playlist based on your mood 🎧</p>
+
+    <form id="playlist-form">
+      <input type="text" id="mood-input" placeholder="Type your mood (e.g., chill, happy)" required />
+      <button type="submit">Generate Playlist</button>
+    </form>
+
+    <div id="loading" class="loading" style="display: none;">Generating playlist...</div>
+    <div id="playlist-result" class="playlist-box"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
