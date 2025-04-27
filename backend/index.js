@@ -7,12 +7,15 @@ require('dotenv').config();
 const app = express();
 const port = process.env.PORT || 3001;
 
-app.use(cors({
+const corsOptions = {
   origin: 'https://vibesmith.netlify.app',
-  methods: ['GET', 'POST'],
+  methods: ['GET', 'POST', 'OPTIONS'],
   allowedHeaders: ['Content-Type']
-}));
+};
+
+app.use(cors(corsOptions));
 app.use(bodyParser.json());
+app.options('*', cors(corsOptions));
 
 const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
 const SPOTIFY_CLIENT_ID = process.env.SPOTIFY_CLIENT_ID;
