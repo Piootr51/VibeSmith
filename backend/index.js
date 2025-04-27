@@ -1,17 +1,23 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const axios = require('axios');
-const cors = require('cors');
 require('dotenv').config();
 
 const app = express();
 const port = process.env.PORT || 3001;
 
-const corsOptions = {
-  origin: 'https://vibesmith.netlify.app',
-  methods: ['GET', 'POST', 'OPTIONS'],
-  allowedHeaders: ['Content-Type']
-};
+// Ręczne CORS
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "https://vibesmith.netlify.app");
+  res.header("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
+  res.header("Access-Control-Allow-Headers", "Content-Type");
+  if (req.method === 'OPTIONS') {
+    return res.sendStatus(200);
+  }
+  next();
+});
+
+app.use(bodyParser.json());
 
 app.use(cors(corsOptions));
 app.use(bodyParser.json());
