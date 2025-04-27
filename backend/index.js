@@ -15,7 +15,7 @@ const corsOptions = {
 
 app.use(cors(corsOptions));
 app.use(bodyParser.json());
-app.options('*', cors(corsOptions));
+app.options('/', cors(corsOptions));
 
 const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
 const SPOTIFY_CLIENT_ID = process.env.SPOTIFY_CLIENT_ID;
