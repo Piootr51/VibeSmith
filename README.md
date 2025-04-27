@@ -41,10 +41,10 @@ Dominik Olejniczak
 
 Karol Prętki
 
-📄 Licencja
+##📄 Licencja
 Projekt stworzony w celach edukacyjnych.
 
-🚧 Status projektu
+##🚧 Status projektu
 ✅ Wersja MVP ukończona
 Możliwe dalsze usprawnienia:
 
