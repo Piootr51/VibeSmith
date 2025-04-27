@@ -1,0 +1,183 @@
+
+body {
+  margin: 0;
+  font-family: 'Poppins', Arial, sans-serif;
+  background: linear-gradient(120deg, #1f1f1f, #2e2e2e);
+}
+
+.background-overlay {
+  background-image: url("Tyga10proj.JPG");
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.5) blur(3px);
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+  color: white;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.header h1 {
+  font-size: 3.2em;
+  text-shadow: 0 0 12px rgba(76, 175, 80, 0.6);
+}
+
+.highlight {
+  color: #4caf50;
+}
+
+.logo-icon {
+  font-size: 1.1em;
+  margin-right: 8px;
+  vertical-align: middle;
+  color: #4caf50;
+  text-shadow: 0 0 8px rgba(76, 175, 80, 0.4);
+}
+
+.container {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 30px;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 500px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+select {
+  width: 100%;
+  padding: 12px;
+  font-size: 1em;
+  border-radius: 8px;
+  border: none;
+  background-color: white;
+  color: #333;
+  appearance: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.generate-btn {
+  display: block;
+  width: 100%;
+  padding: 14px;
+  font-size: 1.1em;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+  margin-top: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.25s ease;
+}
+
+.generate-btn:hover {
+  background-color: #45a049;
+  transform: translateY(-2px);
+}
+
+.generate-btn:active {
+  transform: scale(0.98);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* 🎵 Styl dla wyników - lista piosenek */
+.song-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.song-card {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border-radius: 12px;
+  padding: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+}
+
+.song-card:hover {
+  transform: translateY(-4px);
+}
+
+.song-info {
+  margin-left: 15px;
+}
+
+.song-title {
+  font-weight: bold;
+  color: #333;
+}
+
+.song-artist {
+  color: #666;
+  font-size: 0.9em;
+}
+
+.spotify-link {
+  margin-left: auto;
+  background-color: #1DB954;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-size: 0.9em;
+  transition: background 0.3s;
+}
+
+.spotify-link:hover {
+  background-color: #17a74a;
+}
+
+/* Loading and error states */
+.loading, .error {
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.loading {
+  background: #f8f4ff;
+  color: #6a5acd;
+}
+
+.error {
+  background: #fff0f0;
+  color: #d55;
+}
+
+.error-detail {
+  font-size: 0.8em;
+  opacity: 0.8;
+}
+
+#generate-btn[disabled] {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
