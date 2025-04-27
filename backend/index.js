@@ -6,7 +6,7 @@ require('dotenv').config();
 const app = express();
 const port = process.env.PORT || 3001;
 
-// Ręczne CORS
+// Ręczna konfiguracja CORS
 app.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "https://vibesmith.netlify.app");
   res.header("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
@@ -18,10 +18,6 @@ app.use((req, res, next) => {
 });
 
 app.use(bodyParser.json());
-
-app.use(cors(corsOptions));
-app.use(bodyParser.json());
-app.options('/', cors(corsOptions));
 
 const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
 const SPOTIFY_CLIENT_ID = process.env.SPOTIFY_CLIENT_ID;
@@ -90,10 +86,11 @@ app.post('/generate-playlist', async (req, res) => {
   }
 });
 
-app.listen(port, () => {
-  console.log(`Server running on http://localhost:${port}`);
-});
-
+// Opcjonalny endpoint testowy
 app.get('/', (req, res) => {
   res.send('VibeSmith backend is running!');
+});
+
+app.listen(port, () => {
+  console.log(`Server running on port ${port}`);
 });
