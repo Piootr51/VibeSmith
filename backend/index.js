@@ -1,12 +1,16 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const axios = require('axios');
+const cors = require('cors');
 require('dotenv').config();
 
 const app = express();
 const port = process.env.PORT || 3001;
 
-// Ręczna konfiguracja CORS
+// Globalne CORS - otwarte na wszystko (na próbę)
+app.use(cors());
+
+// Ręczna obsługa preflight dla pewności
 app.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "https://vibesmith.netlify.app");
   res.header("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
