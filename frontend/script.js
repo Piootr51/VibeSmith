@@ -15,7 +15,7 @@ document.getElementById("playlist-form").addEventListener("submit", async (e) =>
     resultsDiv.innerHTML = "<div class='loading'>🎵 Szukamy idealnych utworów...</div>";
     
     try {
-        const response = await fetch("https://vibesmith-backend.onrender.com", {
+        const response = await fetch("https://vibesmith-backend.onrender.com/generate-playlist", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ mood: combinedPrompt })
