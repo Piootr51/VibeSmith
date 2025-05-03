@@ -19,6 +19,7 @@
 
     <main class="container">
       <form id="playlist-form">
+        <!-- Mood -->
         <div class="form-group">
           <label for="mood">Mood:</label>
           <select id="mood" required>
@@ -27,9 +28,14 @@
             <option>Sad</option>
             <option>Energetic</option>
             <option>Chill</option>
+            <option>Romantic</option>
+            <option>Melancholic</option>
+            <option>Dark</option>
+            <option>Hopeful</option>
           </select>
         </div>
 
+        <!-- Activity -->
         <div class="form-group">
           <label for="activity">Activity:</label>
           <select id="activity" required>
@@ -37,20 +43,41 @@
             <option>Driving</option>
             <option>Studying</option>
             <option>Workout</option>
-            <option>Relax</option>
+            <option>Relaxing</option>
+            <option>Cooking</option>
+            <option>Walking</option>
+            <option>Working</option>
           </select>
         </div>
 
+        <!-- Era -->
         <div class="form-group">
-          <label for="genre">Music era:</label>
-          <select id="genre" required>
+          <label for="era">Music era:</label>
+          <select id="era" required>
             <option disabled selected value="">-- Select era --</option>
+            <option>1990s</option>
             <option>2000s</option>
             <option>2010s</option>
             <option>2020s</option>
           </select>
         </div>
 
+        <!-- Genres (multiple choice) -->
+        <div class="form-group">
+          <label>Genres (select one or more):</label>
+          <div class="checkbox-group">
+            <label><input type="checkbox" name="genre" value="Pop" /> Pop</label>
+            <label><input type="checkbox" name="genre" value="Rock" /> Rock</label>
+            <label><input type="checkbox" name="genre" value="Hip-Hop" /> Hip-Hop</label>
+            <label><input type="checkbox" name="genre" value="Jazz" /> Jazz</label>
+            <label><input type="checkbox" name="genre" value="Electronic" /> Electronic</label>
+            <label><input type="checkbox" name="genre" value="Indie" /> Indie</label>
+            <label><input type="checkbox" name="genre" value="Classical" /> Classical</label>
+            <label><input type="checkbox" name="genre" value="Folk" /> Folk</label>
+          </div>
+        </div>
+
+        <!-- Submit -->
         <button type="submit" id="generate-btn" class="generate-btn">🎧 Generate Playlist</button>
       </form>
 
