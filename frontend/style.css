@@ -238,7 +238,8 @@ select {
 }
 
 .logo-image {
-  height: 48px;
+  height: 72px;
   width: auto;
-  filter: drop-shadow(0 0 5px rgba(76, 175, 80, 0.6));
+  margin-right: 10px;
+  vertical-align: middle;
 }
