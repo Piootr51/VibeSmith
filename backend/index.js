@@ -26,7 +26,6 @@ const SPOTIFY_CLIENT_ID = process.env.SPOTIFY_CLIENT_ID;
 const SPOTIFY_CLIENT_SECRET = process.env.SPOTIFY_CLIENT_SECRET;
 let spotifyAccessToken = '';
 
-// Funkcja do pobrania tokenu Spotify
 async function fetchSpotifyToken() {
   const auth = Buffer.from(`${SPOTIFY_CLIENT_ID}:${SPOTIFY_CLIENT_SECRET}`).toString('base64');
 
@@ -40,16 +39,21 @@ async function fetchSpotifyToken() {
   spotifyAccessToken = response.data.access_token;
 }
 
-// Główna trasa do generowania playlisty
 app.post('/generate-playlist', async (req, res) => {
-  const mood = req.body.mood;
-  if (!mood) return res.status(400).json({ error: 'Mood is required.' });
+  const { mood, activity, era, genres } = req.body;
+
+  if (!mood || !activity || !era || !Array.isArray(genres)) {
+    return res.status(400).json({ error: 'Missing required fields.' });
+  }
+
+  // Budowanie promptu
+  const genreText = genres.length > 0 ? `genres: ${genres.join(', ')}` : '';
+  const prompt = `Suggest 10 songs (artist and title) that fit this mood: ${mood}, activity: ${activity}, era: ${era}${genreText ? `, and ${genreText}` : ''}.`;
 
   try {
-    // 1. Zapytanie do OpenAI
     const gptResponse = await axios.post('https://api.openai.com/v1/chat/completions', {
       model: 'gpt-3.5-turbo',
-      messages: [{ role: 'user', content: `Suggest 10 songs (artist and title) that match the mood: "${mood}".` }],
+      messages: [{ role: 'user', content: prompt }],
       max_tokens: 300,
     }, {
       headers: {
@@ -65,8 +69,8 @@ app.post('/generate-playlist', async (req, res) => {
       return match ? `${match[1]} ${match[2]}` : line;
     });
 
-    // 2. Zapytania do Spotify o linki i okładki
     if (!spotifyAccessToken) await fetchSpotifyToken();
+
     const playlist = [];
 
     for (let song of songList) {
@@ -92,7 +96,6 @@ app.post('/generate-playlist', async (req, res) => {
   }
 });
 
-// Testowy endpoint
 app.get('/', (req, res) => {
   res.send('VibeSmith backend is running!');
 });
