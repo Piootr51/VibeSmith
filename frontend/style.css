@@ -212,3 +212,19 @@ select {
   border-radius: 12px;
   text-align: center;
 }
+
+.checkbox-group {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.checkbox-group label {
+  color: white;
+  font-size: 0.95em;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
