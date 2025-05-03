@@ -7,10 +7,8 @@ require('dotenv').config();
 const app = express();
 const port = process.env.PORT || 3001;
 
-// Globalne CORS - otwarte na wszystko (na próbę)
 app.use(cors());
 
-// Ręczna obsługa preflight dla pewności
 app.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "https://vibesmith.netlify.app");
   res.header("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
@@ -28,7 +26,7 @@ const SPOTIFY_CLIENT_ID = process.env.SPOTIFY_CLIENT_ID;
 const SPOTIFY_CLIENT_SECRET = process.env.SPOTIFY_CLIENT_SECRET;
 let spotifyAccessToken = '';
 
-// Get Spotify token
+// Funkcja do pobrania tokenu Spotify
 async function fetchSpotifyToken() {
   const auth = Buffer.from(`${SPOTIFY_CLIENT_ID}:${SPOTIFY_CLIENT_SECRET}`).toString('base64');
 
@@ -42,13 +40,13 @@ async function fetchSpotifyToken() {
   spotifyAccessToken = response.data.access_token;
 }
 
-// Route to generate playlist
+// Główna trasa do generowania playlisty
 app.post('/generate-playlist', async (req, res) => {
   const mood = req.body.mood;
   if (!mood) return res.status(400).json({ error: 'Mood is required.' });
 
   try {
-    // 1. Get songs from OpenAI
+    // 1. Zapytanie do OpenAI
     const gptResponse = await axios.post('https://api.openai.com/v1/chat/completions', {
       model: 'gpt-3.5-turbo',
       messages: [{ role: 'user', content: `Suggest 10 songs (artist and title) that match the mood: "${mood}".` }],
@@ -67,7 +65,7 @@ app.post('/generate-playlist', async (req, res) => {
       return match ? `${match[1]} ${match[2]}` : line;
     });
 
-    // 2. Fetch track URLs from Spotify
+    // 2. Zapytania do Spotify o linki i okładki
     if (!spotifyAccessToken) await fetchSpotifyToken();
     const playlist = [];
 
@@ -79,7 +77,11 @@ app.post('/generate-playlist', async (req, res) => {
 
       const item = searchRes.data.tracks.items[0];
       if (item) {
-        playlist.push({ title: `${item.name} – ${item.artists[0].name}`, url: item.external_urls.spotify });
+        playlist.push({
+          title: `${item.name} – ${item.artists[0].name}`,
+          url: item.external_urls.spotify,
+          image: item.album.images[0]?.url || null
+        });
       }
     }
 
@@ -90,7 +92,7 @@ app.post('/generate-playlist', async (req, res) => {
   }
 });
 
-// Opcjonalny endpoint testowy
+// Testowy endpoint
 app.get('/', (req, res) => {
   res.send('VibeSmith backend is running!');
 });
