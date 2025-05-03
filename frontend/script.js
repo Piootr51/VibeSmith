@@ -3,8 +3,11 @@ document.getElementById("playlist-form").addEventListener("submit", async (e) =>
 
   const mood = document.getElementById("mood").value;
   const activity = document.getElementById("activity").value;
-  const genre = document.getElementById("genre").value;
-  const combinedPrompt = `${mood} ${activity} ${genre}`.trim();
+  const era = document.getElementById("era").value;
+
+  // Pobieranie zaznaczonych checkboxów z name="genre"
+  const genreCheckboxes = document.querySelectorAll('input[name="genre"]:checked');
+  const genres = Array.from(genreCheckboxes).map(cb => cb.value);
 
   const resultsDiv = document.getElementById("results");
   const generateBtn = document.getElementById("generate-btn");
@@ -22,7 +25,12 @@ document.getElementById("playlist-form").addEventListener("submit", async (e) =>
     const response = await fetch("https://vibesmith-backend.onrender.com/generate-playlist", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ mood: combinedPrompt })
+      body: JSON.stringify({
+        mood,
+        activity,
+        era,
+        genres
+      })
     });
 
     if (!response.ok) throw new Error(`Server error: ${response.status}`);
@@ -35,7 +43,7 @@ document.getElementById("playlist-form").addEventListener("submit", async (e) =>
     }
 
     resultsDiv.innerHTML = `
-      <h3>Your playlist: ${combinedPrompt}</h3>
+      <h3>Your playlist:</h3>
       <div class="song-list">
         ${data.playlist.map(track => {
           const [title, artist] = track.title.split(" – ");
