@@ -44,14 +44,8 @@ Karol Prętki
 ## 📄 Licencja
 Projekt stworzony w celach edukacyjnych.
 
-## 🚧 Status projektu
-✅ Wersja MVP ukończona
-Możliwe dalsze usprawnienia:
+## ✨ Aktualizacje (Update 0.1)
 
-Lepsza obsługa błędów API.
-
-Zapisywanie playlist.
-
-Responsywny design.
-
-Wybór liczby utworów w playliście.
+- Dodano nową kategorię do wyboru: **"Genres"** (np. 2000s, 2010s, 2020s)
+- Do każdej piosenki wyświetlanej w wynikach dodano **okładkę albumu**
+- Poprawiono wygląd aplikacji:
