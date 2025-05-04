@@ -13,7 +13,7 @@
 - Generowanie listy utworów dopasowanych przez **ChatGPT**.
 - Automatyczne wyszukiwanie linków do utworów na **Spotify**.
 - Intuicyjny interfejs użytkownika.
-- Gotowa playlista dostępna jednym kliknięciem.
+- Gotowa lista dopasowanych piosenek dostępna jednym kliknięciem.
 
 ---
 
