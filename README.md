@@ -46,6 +46,6 @@ Projekt stworzony w celach edukacyjnych.
 
 ## ✨ Aktualizacje (Update 0.1)
 
-- Dodano nową kategorię do wyboru: **"Genres"** (np. 2000s, 2010s, 2020s)
+- Dodano nową kategorię do wyboru: **"Genres"** (np. POP, Rock, Indie)
 - Do każdej piosenki wyświetlanej w wynikach dodano **okładkę albumu**
-- Poprawiono wygląd aplikacji:
+- Poprawiono wygląd aplikacji
