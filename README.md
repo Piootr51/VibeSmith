@@ -1,51 +1,57 @@
 # 🎧 VibeSmith
 
-**VibeSmith** to inteligentna aplikacja webowa, która generuje spersonalizowane playlisty na podstawie Twojego nastroju, aktywności i preferencji muzycznych.  
-Łączymy moc AI (ChatGPT) z biblioteką Spotify, aby dostarczyć Ci idealne brzmienia na każdą okazję.
+**VibeSmith** to inteligentna aplikacja webowa, która generuje spersonalizowane playlisty na podstawie Twojego nastroju, aktywności, ery muzycznej i gatunków muzycznych.
 
-[➡️ Zobacz działającą aplikację (Frontend - Netlify)](https://vibesmith.netlify.app)  
-[➡️ Backend (Render)](https://vibesmith-backend.onrender.com)
+Łączymy moc AI (ChatGPT) z biblioteką Spotify, by dostarczyć Ci idealne brzmienia na każdą okazję.
+
+---
+
+## 🔗 Działająca aplikacja
+
+- 🌐 [Zobacz aplikację (frontend)](https://vibesmith.netlify.app)
+- ⚙️ [Backend API (Render)](https://vibesmith-backend.onrender.com)
 
 ---
 
 ## 🚀 Funkcjonalności
-- Wybierz **nastrój**, **aktywność** i **gatunek muzyczny**.
-- Generowanie listy utworów dopasowanych przez **ChatGPT**.
-- Automatyczne wyszukiwanie linków do utworów na **Spotify**.
-- Intuicyjny interfejs użytkownika.
-- Gotowa lista dopasowanych piosenek dostępna jednym kliknięciem.
+
+- Wybór nastroju, aktywności, ery i gatunków muzycznych (multi-select).
+- Generowanie playlisty z pomocą ChatGPT.
+- Wyszukiwanie utworów i linków przez Spotify API.
+- Okładki albumów wyświetlane przy utworach.
+- Intuicyjny, estetyczny interfejs użytkownika.
+- Gotowa lista piosenek w kilka sekund.
 
 ---
 
 ## 🛠️ Technologie
-- **Frontend:** HTML, CSS, JavaScript
-- **Backend:** Node.js, Express.js
-- **API:** OpenAI GPT-3.5, Spotify Web API
-- **Hosting Frontendu:** Netlify
-- **Hosting Backend:** Render.com
+
+- **Frontend**: HTML, CSS, JavaScript
+- **Backend**: Node.js, Express.js
+- **API**: OpenAI GPT-3.5, Spotify Web API
+- **Hosting**: Netlify (frontend), Render.com (backend)
 
 ---
 
-## 🌐 Linki
-- **Frontend:** [https://vibesmith.netlify.app](https://vibesmith.netlify.app)
-- **Backend API:** [https://vibesmith-backend.onrender.com](https://vibesmith-backend.onrender.com)
-
 ## 👨‍💻 Zespół
-Projekt stworzony przez studentów w ramach zajęć Tworzenie Stron Internetowych:
 
-Piotr Kalinowski
+Projekt stworzony przez studentów w ramach zajęć *Tworzenie Stron Internetowych*:
 
-Norbert Linek
+- Piotr Kalinowski  
+- Norbert Linek  
+- Dominik Olejniczak  
+- Karol Prętki  
 
-Dominik Olejniczak
-
-Karol Prętki
+---
 
 ## 📄 Licencja
-Projekt stworzony w celach edukacyjnych.
 
-## ✨ Aktualizacje (Update 0.1)
+Projekt stworzony w celach edukacyjnych (non-commercial).
 
-- Dodano nową kategorię do wyboru: **"Genres"** (np. POP, Rock, Indie)
-- Do każdej piosenki wyświetlanej w wynikach dodano **okładkę albumu**
-- Poprawiono wygląd aplikacji
+---
+
+## ✨ Aktualizacje (v0.1)
+
+- Dodano możliwość wyboru wielu gatunków muzycznych.
+- Dodano wyświetlanie okładek albumów przy wynikach.
+- Ulepszono wygląd i interakcję użytkownika.
