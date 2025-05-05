@@ -37,10 +37,10 @@
 
 Projekt stworzony przez studentów w ramach zajęć *Tworzenie Stron Internetowych*:
 
-- Piotr Kalinowski  30% (Manager, Backend <--> Frontend)
-- Norbert Linek  25% (Frontend)
-- Dominik Olejniczak  30% (Backend)
-- Karol Prętki  15% (treść, rozplanowanie kategorii i wyborów użytkownika)
+- Piotr Kalinowski - 30% (Manager, Backend <--> Frontend)
+- Norbert Linek - 25% (Frontend)
+- Dominik Olejniczak - 30% (Backend)
+- Karol Prętki - 15% (treść, rozplanowanie kategorii i wyborów użytkownika)
 
 ---
 
